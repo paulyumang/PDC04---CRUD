@@ -38,7 +38,7 @@ if (isset($_POST['update'])) {
     $first_name = $_POST['first_name']; 
     $last_name = $_POST['last_name']; 
     $email = $_POST['email']; 
-    $password = $_POST['password']; 
+    $password = md5($_POST['password']); 
     $level = $_POST['level']; 
     
     // Update user data in the database
