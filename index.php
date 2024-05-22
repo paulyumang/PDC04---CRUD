@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 
-      <style>
+    <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -136,12 +136,21 @@
           <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">
           <label for="floatingInput">Email address</label>
         </div>
+
         <div class="form-floating">
           <input type="password" class="form-control" name="password" id="floatingInput" placeholder="name@example.com">
           <label for="floatingInput">Password</label>
         </div>
+
+        <p class="mt-5 mb-3 text-body-secondary">&copy; Don't have an account? <a href="create.php">Register now</a></p>
+
         <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+
         <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
+        
+        
+
+        
 
      </form>
     </main>    

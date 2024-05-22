@@ -19,7 +19,13 @@ include "db_connection.php";
 
     if ($result == TRUE) {
 
-      echo "New record created successfully.";
+        if ($level == 1) {
+          header("Location: admin-page.php");
+      } elseif ($level == 2) {
+          header("Location: user-page.php");
+      } else {
+          echo "Invalid user level.";
+      }
 
     }else{
 
