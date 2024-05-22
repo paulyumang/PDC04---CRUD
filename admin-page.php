@@ -11,22 +11,19 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['email'])) {
 <html>
 
 <head>
+     
 
     <title>HOME</title>
-
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
-    <link href="/docs/5.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet" integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous">
-
-    <!-- Favicons -->
     <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
-    <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
-    <meta name="theme-color" content="#712cf9">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#712cf9">
+<link href="https://getbootstrap.com/docs/5.3/examples/dashboard/dashboard.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -107,18 +104,19 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['email'])) {
       }
     </style>
 
-<link href="https://getbootstrap.com/docs/5.3/examples/dashboard/dashboard.rtl.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 
 <body>
-    <h2>Welcome Admin!</h2>
-     <h1>Hello, <?php echo $_SESSION['email']; ?></h1>
 
-     <h1>First Name: <?php echo $_SESSION['first_name'];?></h1>
-     <h1>Last Name: <?php echo $_SESSION['last_name'];?></h1>
-     <a href="logout.php">Logout</a>
+      
+     
 
-     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+</body>
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
       </symbol>
@@ -221,23 +219,36 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['email'])) {
 </svg>
 
 <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">اسم الشركة</a>
-
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">Company name</a>
+  <div class="d-flex">  
+                    <span class="navbar-text me-5">
+                    <p>Welcome admin!</p>
+                    </span>
+                    <span class="navbar-text me-5">
+                        Welcome, <?php echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name']; ?>
+                    </span>
+                    <span class="navbar-text me-4">
+                        <?php echo $_SESSION['email']; ?>
+                    </span>
+                    <span class="navbar-text me-4">
+                    <a href="logout.php">Logout</a>
+                    </span> 
+                </div>
   <ul class="navbar-nav flex-row d-md-none">
     <li class="nav-item text-nowrap">
-      <button class="nav-link px-3 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="تبديل البحث">
+      <button class="nav-link px-3 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search">
         <svg class="bi"><use xlink:href="#search"/></svg>
       </button>
     </li>
     <li class="nav-item text-nowrap">
-      <button class="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="تبديل التنقل">
+      <button class="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <svg class="bi"><use xlink:href="#list"/></svg>
       </button>
     </li>
   </ul>
 
   <div id="navbarSearch" class="navbar-search w-100 collapse">
-    <input class="form-control w-100 rounded-0 border-0" type="text" placeholder="بحث" aria-label="بحث">
+    <input class="form-control w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
   </div>
 </header>
 
@@ -247,51 +258,56 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['email'])) {
       <div class="offcanvas-md offcanvas-end bg-body-tertiary" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="sidebarMenuLabel">Company name</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="يغلق"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
           <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
                 <svg class="bi"><use xlink:href="#house-fill"/></svg>
-                لوحة القيادة
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="view.php">
+                View Users
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#file-earmark"/></svg>
-                الطلبات
+                Orders
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#cart"/></svg>
-                المنتجات
+                Products
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#people"/></svg>
-                الزبائن
+                Customers
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#graph-up"/></svg>
-                التقارير
+                Reports
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#puzzle"/></svg>
-                التكاملات
+                Integrations
               </a>
             </li>
           </ul>
 
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
-            <span>التقارير المحفوظة</span>
-            <a class="link-secondary" href="#" aria-label="إضافة تقرير جديد">
+            <span>Saved reports</span>
+            <a class="link-secondary" href="#" aria-label="Add a new report">
               <svg class="bi"><use xlink:href="#plus-circle"/></svg>
             </a>
           </h6>
@@ -299,25 +315,25 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['email'])) {
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
-                الشهر الحالي
+                Current month
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
-                الربع الأخير
+                Last quarter
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
-                التفاعل الإجتماعي
+                Social engagement
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#file-earmark-text"/></svg>
-                مبيعات نهاية العام
+                Year-end sale
               </a>
             </li>
           </ul>
@@ -328,13 +344,13 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['email'])) {
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#gear-wide-connected"/></svg>
-                إعدادات
+                Settings
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#door-closed"/></svg>
-                خروج
+                Sign out
               </a>
             </li>
           </ul>
@@ -344,145 +360,145 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['email'])) {
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">لوحة القيادة</h1>
+        <h1 class="h2">Dashboard</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary">مشاركة</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">تصدير</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
           </div>
           <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-1">
             <svg class="bi"><use xlink:href="#calendar3"/></svg>
-            هذا الأسبوع
+            This week
           </button>
         </div>
       </div>
 
       <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 
-      <h2>عنوان القسم</h2>
+      <h2>Section title</h2>
       <div class="table-responsive small">
         <table class="table table-striped table-sm">
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">عنوان</th>
-              <th scope="col">عنوان</th>
-              <th scope="col">عنوان</th>
-              <th scope="col">عنوان</th>
+              <th scope="col">Header</th>
+              <th scope="col">Header</th>
+              <th scope="col">Header</th>
+              <th scope="col">Header</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>1,001</td>
-              <td>بيانات</td>
-              <td>عشوائية</td>
-              <td>تثري</td>
-              <td>الجدول</td>
+              <td>random</td>
+              <td>data</td>
+              <td>placeholder</td>
+              <td>text</td>
             </tr>
             <tr>
               <td>1,002</td>
-              <td>تثري</td>
-              <td>مبهة</td>
-              <td>تصميم</td>
-              <td>تنسيق</td>
+              <td>placeholder</td>
+              <td>irrelevant</td>
+              <td>visual</td>
+              <td>layout</td>
             </tr>
             <tr>
               <td>1,003</td>
-              <td>عشوائية</td>
-              <td>غنية</td>
-              <td>قيمة</td>
-              <td>مفيدة</td>
+              <td>data</td>
+              <td>rich</td>
+              <td>dashboard</td>
+              <td>tabular</td>
             </tr>
             <tr>
               <td>1,003</td>
-              <td>معلومات</td>
-              <td>تثري</td>
-              <td>توضيحية</td>
-              <td>عشوائية</td>
+              <td>information</td>
+              <td>placeholder</td>
+              <td>illustrative</td>
+              <td>data</td>
             </tr>
             <tr>
               <td>1,004</td>
-              <td>الجدول</td>
-              <td>بيانات</td>
-              <td>تنسيق</td>
-              <td>قيمة</td>
+              <td>text</td>
+              <td>random</td>
+              <td>layout</td>
+              <td>dashboard</td>
             </tr>
             <tr>
               <td>1,005</td>
-              <td>قيمة</td>
-              <td>مبهة</td>
-              <td>الجدول</td>
-              <td>تثري</td>
+              <td>dashboard</td>
+              <td>irrelevant</td>
+              <td>text</td>
+              <td>placeholder</td>
             </tr>
             <tr>
               <td>1,006</td>
-              <td>قيمة</td>
-              <td>توضيحية</td>
-              <td>غنية</td>
-              <td>عشوائية</td>
+              <td>dashboard</td>
+              <td>illustrative</td>
+              <td>rich</td>
+              <td>data</td>
             </tr>
             <tr>
               <td>1,007</td>
-              <td>تثري</td>
-              <td>مفيدة</td>
-              <td>معلومات</td>
-              <td>مبهة</td>
+              <td>placeholder</td>
+              <td>tabular</td>
+              <td>information</td>
+              <td>irrelevant</td>
             </tr>
             <tr>
               <td>1,008</td>
-              <td>بيانات</td>
-              <td>عشوائية</td>
-              <td>تثري</td>
-              <td>الجدول</td>
+              <td>random</td>
+              <td>data</td>
+              <td>placeholder</td>
+              <td>text</td>
             </tr>
             <tr>
               <td>1,009</td>
-              <td>تثري</td>
-              <td>مبهة</td>
-              <td>تصميم</td>
-              <td>تنسيق</td>
+              <td>placeholder</td>
+              <td>irrelevant</td>
+              <td>visual</td>
+              <td>layout</td>
             </tr>
             <tr>
               <td>1,010</td>
-              <td>عشوائية</td>
-              <td>غنية</td>
-              <td>قيمة</td>
-              <td>مفيدة</td>
+              <td>data</td>
+              <td>rich</td>
+              <td>dashboard</td>
+              <td>tabular</td>
             </tr>
             <tr>
               <td>1,011</td>
-              <td>معلومات</td>
-              <td>تثري</td>
-              <td>توضيحية</td>
-              <td>عشوائية</td>
+              <td>information</td>
+              <td>placeholder</td>
+              <td>illustrative</td>
+              <td>data</td>
             </tr>
             <tr>
               <td>1,012</td>
-              <td>الجدول</td>
-              <td>تثري</td>
-              <td>تنسيق</td>
-              <td>قيمة</td>
+              <td>text</td>
+              <td>placeholder</td>
+              <td>layout</td>
+              <td>dashboard</td>
             </tr>
             <tr>
               <td>1,013</td>
-              <td>قيمة</td>
-              <td>مبهة</td>
-              <td>الجدول</td>
-              <td>تصميم</td>
+              <td>dashboard</td>
+              <td>irrelevant</td>
+              <td>text</td>
+              <td>visual</td>
             </tr>
             <tr>
               <td>1,014</td>
-              <td>قيمة</td>
-              <td>توضيحية</td>
-              <td>غنية</td>
-              <td>عشوائية</td>
+              <td>dashboard</td>
+              <td>illustrative</td>
+              <td>rich</td>
+              <td>data</td>
             </tr>
             <tr>
               <td>1,015</td>
-              <td>بيانات</td>
-              <td>مفيدة</td>
-              <td>معلومات</td>
-              <td>الجدول</td>
+              <td>random</td>
+              <td>tabular</td>
+              <td>information</td>
+              <td>text</td>
             </tr>
           </tbody>
         </table>
@@ -490,13 +506,12 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['email'])) {
     </main>
   </div>
 </div>
-
-</body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
 <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js" integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous"></script><script src="dashboard.js"></script></body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js" integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous"></script><script src="https://getbootstrap.com/docs/5.3/examples/dashboard/dashboard.js"></script></body>
+</html>
+
+
 </html>
 
 <?php 
